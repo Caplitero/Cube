@@ -6,7 +6,7 @@ class Window {
 
 	sf::RenderWindow* window = nullptr;
 	float posz = 0;
-	float depth = 1500;
+	
 	sf::Vector2i mouseStart;
 	sf::Vector2i mouseEnd;
 	sf::Mouse mouse;
@@ -90,7 +90,7 @@ class Window {
 					float alfaY = atan2f(dy, disP1);
 
 					cube->rotate(alfaY, alfaX, 0);
-					cube->draw(window->getSize().x / 2, window->getSize().y / 2, posz,depth);
+					cube->draw(window->getSize().x / 2, window->getSize().y / 2, posz);
 					Cube3D.resize(cube->show.size() * 4);
 					
 
@@ -108,7 +108,7 @@ class Window {
 					float alfaY = atan2f(dy, disP1);
 
 					cube->rotate(-alfaY, alfaX, 0);
-					cube->draw(window->getSize().x / 2, window->getSize().y / 2, posz,depth);
+					cube->draw(window->getSize().x / 2, window->getSize().y / 2, posz);
 					Cube3D.resize(cube->show.size() * 4);
 					mouseStart = mouseEnd;
 
@@ -135,7 +135,7 @@ public :
 		cube = new Cube(100);
 		Cube3D.setPrimitiveType(sf::Quads);
 		cube->move(Width / 2, Height / 2, -100);
-		cube->draw(Width / 2, Height / 2, posz,depth);
+		cube->draw(Width / 2, Height / 2, posz);
 
 		Cube3D.resize(cube->show.size() * 4);
 		
