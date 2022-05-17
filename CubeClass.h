@@ -6,8 +6,11 @@ class Cube {
 
 
 	float CDis = 0;
-	float Fov = 0;
-	float *depths = nullptr;
+	
+
+
+
+
 	std::vector<std::vector<int>> faces =
 	{
 		{0,1,5,4},
@@ -156,15 +159,15 @@ public :
 		CDis      = _size / 2;
 		C3D       = new Vector3D[8];
 		distances = new float[9];
-		depths    = new float[8];
+		
 		
 		move();
 
 	}
 
-	void draw(float x, float y, float z,float depth)
+	void draw(float x, float y, float z)
 	{   
-		Fov = depth;
+		
 		show.clear();
 		updateDistances(Vector3D(x, y, z));
 		for (int face = 0; face < 6; face++)
